@@ -1,0 +1,211 @@
+/* General container styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to left, rgb(255,230,250), rgb(227,253,245),rgb(255,230,250), rgb(227,253,245));
+  }
+  
+  /* Login box */
+  .login-box {
+    width: 390px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 3px;
+    margin: 2% auto;
+    padding: 1.5% 3%;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    box-shadow: 0px 4px 31px -2px hsl(0, 0%, 40%);
+    border: solid 1.5px #818181;
+    
+  }
+
+  
+  
+  
+  /* Title and subtitle */
+  .login-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family:serif;
+    color: hsl(0, 0%, 36%);
+  }
+  
+  .login-subtitle {
+    font-size: 0.875rem;
+    color: hwb(0 32% 68%);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Input fields */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    color: #7b7b7b;
+  }
+  
+  .password-icon {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: #979797;
+    cursor: pointer;
+    
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    border-radius: 6px;
+    border: 1px solid rgb(213, 213, 213);
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 3%;
+    color: #212121;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .login-input:focus {
+    border-color: hsl(0, 0%, 69%);
+    box-shadow: 0 0 0 4px rgba(192, 192, 192, 0.302);
+  }
+  
+  /* Buttons */
+
+  
+  /* From Uiverse.io by BHARGAVPATEL1244 */ 
+.login-button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 4.5px;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+    font-size: 19px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #96eb96;
+    color: rgb(253, 253, 253);
+    width: 100%;
+    margin-top: 15px;
+   }
+   
+.login-button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+   }
+   
+.login-button:hover span {
+    color: black;
+   }
+   
+.login-button::before,
+.login-button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+.login-button::before {
+    content: "";
+    background:hwb(0 46% 54%);
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+.login-button:hover::before {
+    transform: translate3d(100%, 0, 0);
+   }
+   
+  
+  
+  .signup-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #96eb96;
+    color: rgb(0, 0, 0);
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size:16px;
+  }
+  
+  .signup-button {
+    @apply active:scale-[1.1]
+  }
+  
+  .ff{
+
+    @apply flex justify-end 
+  }
+  
+  .forgot-password {
+    font-size: 0.875rem;
+    color: #ff0000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-password:hover {
+    color: #000000;
+  }
+
+
+  .sn{
+    @apply flex justify-between items-center mt-5
+  }
+
+  .arrow{
+    @apply text-blue-500 font-bold
+  }
+
+  h4{
+    @apply text-[14px] text-gray-700 font-semibold
+  }
+
+  h5{
+    @apply text-[13px] text-[#03bf03] font-semibold text-center mt-2
+  }
+  img{
+
+    @apply w-[33px] h-[33px]
+
+
+  }
+
+  .fb{
+    @apply flex justify-center items-center gap-5 mt-5
+  }
+
+  h6{
+
+    @apply text-red-600 font-serif font-medium text-[10px]
+  }
