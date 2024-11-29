@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
-import { AiFillEye } from 'react-icons/ai';
 import './LoginForm.css'; // Importing the CSS file
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { MdAttachEmail } from "react-icons/md";
 
 const LoginForm = () => {
 
+    // ========= Custom State =========== // 
+
+    const [show, setshow] = useState(true)
+    const [formData , setFormData] = useState({userName:'', email:'', password:''})
+    const [error, setError] = useState({userError:'', emailError:'', passwordError:''})
 
 
 
-
-
-
+    // ================ Function Part ================ //
 
 
 
@@ -29,10 +34,30 @@ const LoginForm = () => {
           <div className="form-group">
             <div className="input-container">
               <FaUserAlt className="input-icon" />
+
+              {/* ===== User input start ========== */}
+              <input
+                type="text"
+                placeholder="UserName"
+                className="login-input"
+              />
+            </div>
+
+            {/* ====   User Error ========= */}
+            <h6></h6>
+          </div>
+
+          {/*  ========  User Input End ======= */}
+
+          {/* --------- Email Input Start--------- */}
+          <div className="form-group">
+            <div className="input-container">
+            <MdAttachEmail className="input-icon" />
+
               {/* ===== Email input ========== */}
               <input
                 type="email"
-                placeholder="@Email or Username"
+                placeholder="@Email"
                 className="login-input"
               />
             </div>
@@ -41,22 +66,39 @@ const LoginForm = () => {
             <h6></h6>
 
           </div>
+
+          {/*  ------- Email Input End ------- */}
+
+
+          {/*  -------- Password Input Start ----- */}
+
           <div className="form-group">
             <div className="input-container">
               <FaLock className="input-icon" />
               
               {/* ====== Pass Input  */}
               <input
-                type="password"
+                type={show? 'password': 'text'}
                 placeholder="Password"
                 className="login-input"
               />
-              <AiFillEye className="password-icon" />
+              {
+                show?
+
+                <FaEyeSlash onClick={()=>setshow(!show)} className="password-icon" />
+
+                :
+
+                <FaRegEye onClick={()=>setshow(!show)} className="password-icon" />
+
+              }
               
             </div>
             {/* ======= Password Error ========= */}
             <h6></h6>
           </div>
+
+          {/* ------------ Password Input End -------- */}
          
         <div className="ff">
         <a href="#" className="forgot-password">
