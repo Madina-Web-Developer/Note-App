@@ -11,14 +11,21 @@ const LoginForm = () => {
     // ========= Custom State =========== // 
 
     const [show, setshow] = useState(true)
-    const [formData , setFormData] = useState({userName:'', email:'', password:''})
+    const [ formData , setFormData ] = useState({userName:'', email:'', password:''})
     const [error, setError] = useState({userError:'', emailError:'', passwordError:''})
 
 
 
     // ================ Function Part ================ //
 
+    //    const Submit = ()=>{
 
+    
+
+
+
+
+    //    }
 
 
   return (
@@ -36,7 +43,7 @@ const LoginForm = () => {
               <FaUserAlt className="input-icon" />
 
               {/* ===== User input start ========== */}
-              <input
+              <input onChange={(e)=>setFormData((preve)=>({...preve,userName:e.target.value})) }
                 type="text"
                 placeholder="UserName"
                 className="login-input"
@@ -50,12 +57,13 @@ const LoginForm = () => {
           {/*  ========  User Input End ======= */}
 
           {/* --------- Email Input Start--------- */}
+
           <div className="form-group">
             <div className="input-container">
             <MdAttachEmail className="input-icon" />
 
               {/* ===== Email input ========== */}
-              <input
+              <input onChange={(e)=>setFormData((preve)=>({...preve, email:e.target.value}))}
                 type="email"
                 placeholder="@Email"
                 className="login-input"
@@ -77,7 +85,7 @@ const LoginForm = () => {
               <FaLock className="input-icon" />
               
               {/* ====== Pass Input  */}
-              <input
+              <input onChange={(e)=>setFormData((preve)=>({...preve, password:e.target.value}))}
                 type={show? 'password': 'text'}
                 placeholder="Password"
                 className="login-input"
