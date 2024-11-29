@@ -5,6 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
+import { toast, Zoom } from 'react-toastify';
 
 const LoginForm = () => {
 
@@ -13,27 +14,59 @@ const LoginForm = () => {
     const [show, setshow] = useState(true)
     const [ formData , setFormData ] = useState({userName:'', email:'', password:''})
     const [error, setError] = useState({userError:'', emailError:'', passwordError:''})
+    
 
 
 
     // ================ Function Part ================ //
 
-    //    const Submit = ()=>{
+       const Submit = (e)=>{
+       e.preventDefault()
 
-    
+       if(formData.userName == ''){
+        setError((preve)=>({...preve, userError:'Please Enter Your UserName'}))
+       }
 
+       else if (!/^[a-zA-Z\s]*$/.test(formData.userName)) {
+        setError((preve) => ({ ...preve, userError: 'Name cannot contain symbols or numbers' }))}
 
+       if(formData.email == ''){
+        setError((preve)=>({...preve, emailError:'Please Enter Your Mail'}))
+       }
 
+       else if (!formData.email.includes('@')) {
+        setError((preve) => ({ ...preve, emailError: 'Enter a valid email address' }))}
 
-    //    }
+       if(formData.password == ''){
+        setError((preve)=>({...preve, passwordError:'Please Enter Your Password'}))
+       }
 
+       else if(formData.password.length <8){
+        setError((preve)=>({...preve, passwordError:'Password must be 8 degits, you can make a strong password by using @$#%*12Msfd like this'}))
+       }
+
+       else{
+        toast.success('Login Successful !', {
+            position: "top-center",
+            autoClose: 4659,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Zoom,
+            });
+       }
+
+       }
 
   return (
     <div className="login-container">
       <div className="login-box">
         <h1 className="login-title">Log In</h1>
         <p className="login-subtitle">
-          Login here using your username and password
+          Login here using your username email and password
         </p>
 
         {/* ===========  Form Part Start ========= */}
@@ -43,7 +76,7 @@ const LoginForm = () => {
               <FaUserAlt className="input-icon" />
 
               {/* ===== User input start ========== */}
-              <input onChange={(e)=>setFormData((preve)=>({...preve,userName:e.target.value})) }
+              <input  onChange={(e)=>{setFormData((preve)=>({...preve,userName:e.target.value})) ,setError((preve)=>({...preve,userError:''})) } }
                 type="text"
                 placeholder="UserName"
                 className="login-input"
@@ -51,7 +84,7 @@ const LoginForm = () => {
             </div>
 
             {/* ====   User Error ========= */}
-            <h6></h6>
+            <h6><i>{error.userError}</i></h6>
           </div>
 
           {/*  ========  User Input End ======= */}
@@ -63,7 +96,7 @@ const LoginForm = () => {
             <MdAttachEmail className="input-icon" />
 
               {/* ===== Email input ========== */}
-              <input onChange={(e)=>setFormData((preve)=>({...preve, email:e.target.value}))}
+              <input onChange={(e)=>{setFormData((preve)=>({...preve, email:e.target.value})) , setError((preve)=>({...preve,emailError:''}))}}
                 type="email"
                 placeholder="@Email"
                 className="login-input"
@@ -71,7 +104,7 @@ const LoginForm = () => {
             </div>
 
             {/* ====   Email Error ========= */}
-            <h6></h6>
+            <h6><i>{error.emailError}</i></h6>
 
           </div>
 
@@ -85,7 +118,7 @@ const LoginForm = () => {
               <FaLock className="input-icon" />
               
               {/* ====== Pass Input  */}
-              <input onChange={(e)=>setFormData((preve)=>({...preve, password:e.target.value}))}
+              <input onChange={(e)=>{setFormData((preve)=>({...preve, password:e.target.value})), setError((preve)=>({...preve,passwordError:''}))}}
                 type={show? 'password': 'text'}
                 placeholder="Password"
                 className="login-input"
@@ -103,7 +136,7 @@ const LoginForm = () => {
               
             </div>
             {/* ======= Password Error ========= */}
-            <h6></h6>
+            <h6  ><i>{error.passwordError}</i></h6>
           </div>
 
           {/* ------------ Password Input End -------- */}
@@ -113,7 +146,7 @@ const LoginForm = () => {
               <i>Forgot Password ?</i>
             </a>
         </div>
-          <button type="submit" className="login-button">
+          <button onClick={Submit} type="submit" className="login-button">
             <span>Log In</span>
           </button>
         </form>

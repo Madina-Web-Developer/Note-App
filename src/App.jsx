@@ -3,6 +3,10 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './App.css'
 import LoginForm from './Components/Ligin Folder/LoginForm'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function App() {
 
@@ -22,6 +26,7 @@ function App() {
   return (
     <>
      <RouterProvider router={myRoute}/>
+     <ToastContainer />
     </>
   )
 }
