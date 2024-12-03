@@ -5,6 +5,7 @@ import LoginForm from './Components/Ligin Folder/LoginForm'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Rezister from './Components/Ligin Folder/Rezister';
 
 
 
@@ -14,14 +15,11 @@ function App() {
     createRoutesFromElements(
       <Route>
         
-        <Route path='/' element={<LoginForm/>}/>
+        <Route path='/' element={<Rezister/>}/> 
 
       </Route>
     )
   )
-
-
-  
 
   return (
     <>

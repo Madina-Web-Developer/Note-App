@@ -6,17 +6,13 @@
     min-height: 100vh;
     background: linear-gradient(to left, rgb(255,230,250), #e8ffff,rgb(255,230,250), #e8ffff);
    
-   
   }
 
-  .top img{
+  .w img{
 
-    @apply w-[160px] h-[250px] absolute top-[54%] right-[34.5%] z-0
+    @apply w-[450px] h-[500px] absolute top-[34%] right-[26%] z-0 opacity-70
   }
 
-  
-
-  
   
   /* Login box */
   .login-box {
@@ -26,10 +22,49 @@
     border-radius: 5px;
     margin: 2% auto;
     background-image: linear-gradient(-225deg, #E8FFFF 50%, #FFE6FA 50%);
+    border: none;
+    position: relative;
     box-shadow: 0px 2px 15px 1px hwb(0 61% 39%);
     border: solid 2px hwb(0 76% 24%);
-    position: relative;
+    
+    
+  }
 
+  .clip_path{
+
+    clip-path: polygon(0 100%, 50% 90%, 100% 100%, 100% 100%, 0 100%);
+    z-index: 100;
+    height: 500px;
+    width: 405px;
+    background-color:#e8ffff;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    border-radius: 2%;
+    border: none;
+    z-index: 10;
+    
+   
+
+  }
+  
+  
+
+  .login_back{
+
+    @apply font-serif hover:text-blue-500;
+    
+    position: relative;
+    z-index: 28;
+    font-size: 30px;
+    color: #37c632;
+    top: 20%; 
+    left: 37%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    
+    
   }
 
   .login-box{
@@ -39,7 +74,7 @@
 
   .login-box{
 
-    @apply p-[5.5%] lg:py-[1.7%] lg:px-[2.9%]
+    @apply p-[5.5%] lg:py-[1.7%] lg:px-[2%]
   }
 
   
@@ -47,7 +82,7 @@
   
   /* Title and subtitle */
   .login-title {
-    font-size: 32px;
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 0.5rem;
@@ -75,14 +110,14 @@
     position: absolute;
     top: 0.75rem;
     left: 0.75rem;
-    color: #7b7b7b;
+    color: hsl(0, 0%, 64%);
   }
   
   .password-icon {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    color: hwb(0 44% 56%);
+    color: rgb(149, 149, 149);
     cursor: pointer;
     
   }
@@ -95,7 +130,7 @@
     outline: none;
     transition: border 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 3%;
-    color: #212121;
+    color: rgb(79, 79, 79);
     font-weight: 500;
     font-size: 14px;
   }
@@ -169,7 +204,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: #89e3ba;
+    background: #96eb96;
     color: rgb(0, 0, 0);
     padding: 6px;
     border-radius: 4px;
@@ -213,17 +248,65 @@
   }
 
   h5{
-    @apply text-[13px] text-[#03bf03] font-semibold text-center mt-2
-  }
-  img2{
-
-    @apply w-[33px] h-[33px]
-
-
+    @apply text-[15px] text-[#69ae69] font-semibold text-center 
   }
 
-  
+  img{
+
+    @apply w-[25px] h-[25px]
+
+
+  }
+
+
   h6{
 
     @apply text-[#ff0000]   text-[11px] 
   }
+
+  .back{
+
+    @apply text-blue-400 text-[15px]
+  }
+
+  .checkbox{
+
+    @apply flex gap-2 items-center justify-start
+  }
+
+  .ckbox{
+    @apply border-none w-[15px] h-[15px] outline-none
+  }
+
+  .remember h3{
+
+    @apply text-[13px] text-green-600 font-medium
+  }
+
+  .akta{
+    @apply flex justify-center items-center gap-5
+  }
+
+  .reg{
+
+    @apply flex justify-center items-center mt-4
+  }
+
+
+.f {
+  @apply flex gap-4
+}
+
+.sp{
+  @apply border-none w-[15px] h-[15px] outline-none
+}
+
+.remember2 h3{
+
+  @apply text-[13px] text-gray-700 font-medium
+}
+
+.checkbox1{
+
+  @apply flex gap-1 items-center justify-end
+}
