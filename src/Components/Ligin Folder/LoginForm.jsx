@@ -6,6 +6,7 @@ import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
 import { toast, Zoom } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
 
@@ -65,13 +66,13 @@ const LoginForm = () => {
 
     <>
     
-    <div className="top"><img src="public/t.png" alt="h" /></div>
+    <div className="top"><img className='top' src="public/t.png" alt="h" /></div>
     
     <div className="login-container">
       <div className="login-box">
         <h1 className="login-title">Log In</h1>
         <p className="login-subtitle">
-          Login here using your username email and password
+          Login here by using your username email and password
         </p>
 
         {/* ===========  Form Part Start ========= */}
@@ -158,18 +159,11 @@ const LoginForm = () => {
 
         <div className="sn">
         <h4>Don't have an Account ?</h4>
-        <   FaLongArrowAltRight  className='arrow'/>
             <button type="button" className="signup-button">
-              Sign Up 
+             <Link to={'/'}> Sign Up </Link>
             </button>
         </div>
-        <div className="last">
-            <h5>Or login with</h5>
-            <div className="fb">
-                <a href="https://www.facebook.com/"><img src="public/f.png" alt="fb" /></a>
-                <a href="https://www.google.com/"><img src="public/G.png" alt="google" /></a>
-            </div>
-        </div>
+       
       </div>
     </div>
     

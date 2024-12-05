@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
+
+
+.nav{
+
+    @apply lg:p-[10x]    p-[10px];
+
+    background: linear-gradient(to right, rgb(255,230,250), #e8ffff,rgb(255,230,250), #e8ffff);
+    
+}
+
+
+.logo{
+
+    @apply flex lg:gap-1 gap-[3px] mt-1 justify-center items-center
+}
+
+.logo h1{
+
+    @apply font-Albi  font-medium lg:font-semibold md:font-bold  text-[12px]   lg:text-[30px] text-[hsl(8,100%,71%)]
+
+
+}
+
+.user_info{
+
+    @apply flex gap-1  lg:gap-2 justify-center items-center
+}
+
+.name h2{
+
+    @apply text-[6px] lg:text-[15px]  font-bold font-sans text-[#E59BE9] lg:mr-5
+}
+
+.logo_img img{
+
+    @apply lg:w-[50px] w-[16px] 
+}
+
+
+.out{
+
+    @apply text-red-500 lg:text-[25px] text-[10px]
+}
+
+.user_profile_pic img{
+
+    @apply w-[16px] h-[15px] lg:w-[35px] lg:h-[35px] rounded-full border-solid border-[1px] border-[#fea597]
+}
+
+.madina_nav{
+
+    @apply flex justify-between items-center
+}
+
+
+
+.mina_search{
+
+    @apply  text-[10px]  lg:text-[25px] absolute lg:top-[20%] flex lg:left-[4%] top-[25%]  left-[4%] z-10 text-green-700
+}
+
+.logo_search{
+
+    @apply flex  lg:gap-6 gap-1  items-center 
+}
+
+.input_search{
+
+    @apply   lg:w-[450px] w-[100px] lg:py-2  lg:px-4 border-solid lg:border-[2px]  border-[1px] border-[#FEA597] lg:pl-16 pl-4  rounded-sm   lg:rounded-md  outline-none
+
+    lg:text-[18px] text-[8px] font-semibold font-Poppins text-gray-600 p-[2px] m-0 hover:shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]
+    
+    hover:border-[#79AC78]
+
+}
+
+
+.search{
+
+    @apply relative justify-center items-center
+}
+
+.logout h3{
+
+    @apply text-[3px]  lg:text-[8px] text-red-600 font-bold
+}
+

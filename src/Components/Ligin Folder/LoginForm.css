@@ -11,7 +11,7 @@
 
   .top img{
 
-    @apply w-[160px] h-[250px] absolute top-[54%] right-[34.5%] z-0
+    @apply w-[160px] h-[235px] absolute hidden  lg:block lg:top-[60%]    lg:right-[21%]  xl:right-[33%]   xl:top-[51%]    z-0
   }
 
   
@@ -20,9 +20,9 @@
   
   /* Login box */
   .login-box {
-    width: 400px;
-    min-height: 500px;
-    height: auto;
+
+    @apply md:w-[400px] w-[290px];
+
     border-radius: 5px;
     margin: 2% auto;
     background-image: linear-gradient(-225deg, #E8FFFF 50%, #FFE6FA 50%);
@@ -39,7 +39,7 @@
 
   .login-box{
 
-    @apply p-[5.5%] lg:py-[1.7%] lg:px-[2.9%]
+    @apply p-[5%] lg:py-[1.7%] lg:px-[2.9%]
   }
 
   
@@ -47,17 +47,21 @@
   
   /* Title and subtitle */
   .login-title {
-    font-size: 32px;
-    font-weight: bold;
+
+    @apply text-[26px] lg:text-[28px] font-bold font-serif;
+    
     text-align: center;
     margin-bottom: 0.5rem;
-    font-family:serif;
-    color: hsl(0, 0%, 36%);
+   
+    color: rgb(109, 109, 109);
   }
   
   .login-subtitle {
-    font-size: 0.875rem;
-    color: hwb(0 32% 68%);
+
+    @apply text-[12px] lg:text-[14px] font-semibold;
+
+    font-size: 12px;
+    color: #727272;
     text-align: center;
     margin-bottom: 1.5rem;
   }
@@ -75,7 +79,7 @@
     position: absolute;
     top: 0.75rem;
     left: 0.75rem;
-    color: #7b7b7b;
+    color: hsl(0, 0%, 60%);
   }
   
   .password-icon {
@@ -98,6 +102,8 @@
     color: #212121;
     font-weight: 500;
     font-size: 14px;
+
+    @apply lg:text-[15px] text-[12px];
   }
   
   .login-input:focus {
@@ -110,6 +116,9 @@
   
   /* From Uiverse.io by BHARGAVPATEL1244 */ 
 .login-button {
+
+  
+  
     outline: none;
     cursor: pointer;
     border: none;
@@ -121,7 +130,6 @@
     display: inline-block;
     letter-spacing: 0.05rem;
     font-weight: 600;
-    font-size: 19px;
     border-radius: 5px;
     overflow: hidden;
     background: #89e3ba;
@@ -131,6 +139,9 @@
    }
    
 .login-button span {
+
+  @apply lg:text-[19px] text-[18px] font-bold;
+
     position: relative;
     z-index: 10;
     transition: color 0.4s;
@@ -166,6 +177,9 @@
   
   
   .signup-button {
+
+    @apply lg:text-[16px];
+
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -176,17 +190,14 @@
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
-    font-size:16px;
+
   }
   
   .signup-button {
     @apply active:scale-[1.1]
   }
   
-  .ff{
-
-    @apply flex justify-end 
-  }
+  
   
   .forgot-password {
     font-size: 13px;
@@ -204,26 +215,19 @@
     @apply flex justify-between items-center mt-5
   }
 
-  .arrow{
-    @apply text-blue-500 font-bold
-  }
+  
 
   h4{
-    @apply text-[14px] text-gray-500 font-semibold
+    @apply  text-[12px]  lg:text-[14px] text-gray-500 font-semibold
   }
 
   h5{
-    @apply text-[13px] text-[#03bf03] font-semibold text-center mt-2
+    @apply text-[10px] lg:text-[13px] text-[#03bf03] font-semibold text-center mt-2
   }
-  img2{
-
-    @apply w-[33px] h-[33px]
-
-
-  }
+  
 
   
   h6{
 
-    @apply text-[#ff0000]   text-[11px] 
+    @apply text-[#ff0000]   lg:text-[11px] text-[9px] 
   }
