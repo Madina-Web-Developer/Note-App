@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { FaUserAlt, FaLock } from 'react-icons/fa';
 import './Rezister.css'; // Importing the CSS file
 import { MdAttachEmail } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, validatePassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { Slide, toast, Zoom } from 'react-toastify';
 
@@ -15,6 +15,8 @@ const Rezister = () => {
 const [show, setShow] = useState(true)
 const [ formData , setFormData ] = useState({userName:'', email:'', password:'', cpassword:''})
 const [error, setError] = useState({userError:'', emailError:'', passwordError:'', cpasswordError:''})
+
+const navigate=useNavigate()
 
 // ================= Firebase Varible ==================================
 
@@ -43,19 +45,13 @@ const auth = getAuth();
     setError((preve)=>({...preve, passwordError:'Please Enter Your Password'}))
    }
 
-    else if(formData.cpassword == ''){
+  else if(formData.cpassword == ''){
     setError((preve)=>({...preve, cpasswordError:'Please Enter Your Password'}))
    }
 
   //  else if(formData.password.length <6){
   //   setError((preve)=>({...preve, passwordError:'Password must be 6 degits, you can make a strong password by using @$#%*12Msfd like this'}))
   //  }
-
-   if(formData.cpassword == ''){
-    setError((preve)=>({...preve, passwordError:'Please Enter Your Password'}))
-   }
-
-   
    
    else if(formData.password != formData.cpassword){
     setError((preve)=>({...preve, cpasswordError:'Password dose not match'}))
@@ -70,11 +66,14 @@ const auth = getAuth();
   .then((userCredential) => {
     const user = userCredential.user;
 
-   console.log(user)
+    // -------------- Navigate the login page 
+
+            
+
 // =============== User name and Profile ==========
 
     updateProfile(auth.currentUser, {
-      displayName: formData.userName, photoURL: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
+      displayName: formData.userName, photoURL:"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
     }).then(() => {
 
 
@@ -85,8 +84,8 @@ const auth = getAuth();
         
     // ---------- Tost
         toast.info('Email verification send', {
-          position: "top-center",
-          autoClose: 4659,
+          position: "top-right",
+          autoClose: 5000,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -97,7 +96,7 @@ const auth = getAuth();
           });
       });
 
-
+      navigate('/login')
 
      
     })
@@ -127,7 +126,7 @@ const auth = getAuth();
 
       toast.error('Email has already used', {
         position: "top-center",
-        autoClose: 4659,
+        autoClose: 5000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -142,9 +141,9 @@ const auth = getAuth();
 
     if(errorCode == 'auth/password-does-not-meet-requirements'){
 
-      setError((preve)=>({...preve, passwordError:'password must be required special Characters and numbers like- 123@%mina '}))
+      setError((preve)=>({...preve, passwordError:'password must be required 6 degits  special Characters and numbers like- 123@%#mina '}))
 
-      setError((preve)=>({...preve, cpasswordError:'password must be required special Characters and numbers like- 123@%mina '}))
+      setError((preve)=>({...preve, cpasswordError:'password must be required 6 degits special Characters and numbers like- 123@%#mina '}))
     }else{
       
       console.log('not done')

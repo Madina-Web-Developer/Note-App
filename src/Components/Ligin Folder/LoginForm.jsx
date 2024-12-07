@@ -5,8 +5,11 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
-import { toast, Zoom } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Bounce, Slide, toast, Zoom } from 'react-toastify';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { userData } from '../Slice/UserSlice';
 
 const LoginForm = () => {
 
@@ -15,48 +18,107 @@ const LoginForm = () => {
     const [show, setshow] = useState(true)
     const [ formData , setFormData ] = useState({userName:'', email:'', password:''})
     const [error, setError] = useState({userError:'', emailError:'', passwordError:''})
+
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
     
+    // ============ Firebase Varible ==============
 
 
+    const auth = getAuth();
 
     // ================ Function Part ================ //
 
        const Submit = (e)=>{
        e.preventDefault()
 
-       if(formData.userName == ''){
-        setError((preve)=>({...preve, userError:'Please Enter Your UserName'}))
-       }
-
-       else if (!/^[a-zA-Z\s]*$/.test(formData.userName)) {
-        setError((preve) => ({ ...preve, userError: 'Name cannot contain symbols or numbers' }))}
+     
 
        if(formData.email == ''){
         setError((preve)=>({...preve, emailError:'Please Enter Your Mail'}))
        }
 
-       else if (!formData.email.includes('@')) {
-        setError((preve) => ({ ...preve, emailError: 'Enter a valid email address' }))}
+       
 
        if(formData.password == ''){
         setError((preve)=>({...preve, passwordError:'Please Enter Your Password'}))
        }
 
-       else if(formData.password.length <8){
-        setError((preve)=>({...preve, passwordError:'Password must be 8 degits, you can make a strong password by using @$#%*12Msfd like this'}))
-       }
-
        else{
-        toast.success('Login Successful !', {
-            position: "top-center",
-            autoClose: 4659,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Zoom,
+
+        signInWithEmailAndPassword(auth, formData.email, formData.password)
+            .then((userCredential) => {
+
+              const user = userCredential.user;
+
+              if(user.emailVerified == true ){
+
+                //  ------------- Navigate login to Home Page ------------
+                      navigate('/')
+
+                      
+                toast.success('Login Successful', {
+                  position: "bottom-right",
+                  autoClose:3500,
+                  hideProgressBar:false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                  transition:Slide,
+                  });
+
+
+                  // ------------Store User Data -----------
+                    dispatch(userData (user))
+
+                    localStorage.setItem('currentUser', JSON.stringify(user))
+
+
+
+                      
+                  // ------------- Error 
+              }else{
+
+                toast.warning('Email is not Verified !', {
+                  position: "top-center",
+                  autoClose:4500,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                  transition:Bounce,
+                  });
+
+              }
+
+              // ------------------- Catch Path ---------
+            
+            })
+            .catch((error) => {
+             const errorCode = error.code;
+
+             if(errorCode){
+
+               toast.error('Something with Wrong !', {
+                   position: "top-center",
+                   autoClose: 4500,
+                   hideProgressBar: true,
+                   closeOnClick: true,
+                   pauseOnHover: true,
+                   draggable: true,
+                   progress: undefined,
+                   theme: "colored",
+                   transition:Bounce,
+                   });
+
+             }
+
+             
             });
        }
 
@@ -69,7 +131,7 @@ const LoginForm = () => {
     <div className="top"><img className='top' src="public/t.png" alt="h" /></div>
     
     <div className="login-container">
-      <div className="login-box">
+      <div className="login-box_l">
         <h1 className="login-title">Log In</h1>
         <p className="login-subtitle">
           Login here by using your username email and password
@@ -77,24 +139,7 @@ const LoginForm = () => {
 
         {/* ===========  Form Part Start ========= */}
         <form>
-          <div className="form-group">
-            <div className="input-container">
-              <FaUserAlt className="input-icon" />
-
-              {/* ===== User input start ========== */}
-              <input  onChange={(e)=>{setFormData((preve)=>({...preve,userName:e.target.value})) ,setError((preve)=>({...preve,userError:''})) } }
-                type="text"
-                placeholder="UserName"
-                className="login-input"
-              />
-            </div>
-
-            {/* ====   User Error ========= */}
-            <h6><i>{error.userError}</i></h6>
-          </div>
-
-          {/*  ========  User Input End ======= */}
-
+         
           {/* --------- Email Input Start--------- */}
 
           <div className="form-group">
@@ -146,12 +191,7 @@ const LoginForm = () => {
           </div>
 
           {/* ------------ Password Input End -------- */}
-         
-        <div className="ff">
-        <a href="#" className="forgot-password">
-              <i>Forgot Password ?</i>
-            </a>
-        </div>
+        
           <button onClick={Submit} type="submit" className="login-button">
             <span>Log In</span>
           </button>
@@ -160,7 +200,7 @@ const LoginForm = () => {
         <div className="sn">
         <h4>Don't have an Account ?</h4>
             <button type="button" className="signup-button">
-             <Link to={'/'}> Sign Up </Link>
+             <Link to={'/register'}> Sign Up </Link>
             </button>
         </div>
        

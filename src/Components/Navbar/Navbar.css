@@ -9,9 +9,12 @@
 
 .nav{
 
-    @apply lg:p-[10x]    p-[10px];
+    @apply lg:p-[10x]  border-b-2 border-b-slate-200  p-[10px];
 
-    background: linear-gradient(to right, rgb(255,230,250), #e8ffff,rgb(255,230,250), #e8ffff);
+    background: linear-gradient(to right, rgb(255,230,250), #e8ffff,rgb(255,230,250), #e8ffff) 
+    
+    
+    ;
     
 }
 
@@ -23,7 +26,7 @@
 
 .logo h1{
 
-    @apply font-Albi  font-medium lg:font-semibold md:font-bold  text-[12px]   lg:text-[30px] text-[hsl(8,100%,71%)]
+    @apply font-Albi  font-medium lg:font-semibold md:font-bold  text-[12px]   lg:text-[25px] text-[hsl(8,100%,71%)]
 
 
 }
@@ -35,7 +38,7 @@
 
 .name h2{
 
-    @apply text-[6px] lg:text-[15px]  font-bold font-sans text-[#E59BE9] lg:mr-5
+    @apply text-[6px] lg:text-[15px]  font-bold font-sans text-[#5A6C57] lg:mr-5
 }
 
 .logo_img img{
@@ -51,7 +54,7 @@
 
 .user_profile_pic img{
 
-    @apply w-[16px] h-[15px] lg:w-[35px] lg:h-[35px] rounded-full border-solid border-[1px] border-[#fea597]
+    @apply w-[16px] h-[15px] lg:w-[38px] lg:h-[38px] rounded-full border-solid 
 }
 
 .madina_nav{
@@ -73,11 +76,11 @@
 
 .input_search{
 
-    @apply   lg:w-[450px] w-[100px] lg:py-2  lg:px-4 border-solid lg:border-[2px]  border-[1px] border-[#FEA597] lg:pl-16 pl-4  rounded-sm   lg:rounded-md  outline-none
+    @apply   lg:w-[450px] w-[100px] lg:py-2  lg:px-4 border-solid lg:border-[1.8px]  border-[1px] border-[#FEA597] lg:pl-16 pl-4  rounded-sm   lg:rounded-md  outline-none
 
     lg:text-[18px] text-[8px] font-semibold font-Poppins text-gray-600 p-[2px] m-0 hover:shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]
     
-    hover:border-[#79AC78]
+    hover:border-[#79AC78] bg-slate-200
 
 }
 

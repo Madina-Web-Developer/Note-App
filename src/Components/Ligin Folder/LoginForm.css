@@ -11,7 +11,7 @@
 
   .top img{
 
-    @apply w-[160px] h-[235px] absolute hidden  lg:block lg:top-[60%]    lg:right-[21%]  xl:right-[33%]   xl:top-[51%]    z-0
+    @apply w-[130px] h-[180px] absolute hidden  lg:block lg:top-[56%]    lg:right-[25%]  xl:right-[35.5%]   xl:top-[52%]    z-0
   }
 
   
@@ -19,9 +19,9 @@
   
   
   /* Login box */
-  .login-box {
+  .login-box_l {
 
-    @apply md:w-[400px] w-[290px];
+    @apply md:w-[350px] w-[290px];
 
     border-radius: 5px;
     margin: 2% auto;
@@ -32,14 +32,14 @@
 
   }
 
-  .login-box{
+  .login-box_l{
 
     @apply  z-10
   }
 
-  .login-box{
+  .login-box_l{
 
-    @apply p-[5%] lg:py-[1.7%] lg:px-[2.9%]
+    @apply p-[5%] lg:py-[1.7%] lg:px-[2%]
   }
 
   
@@ -99,11 +99,12 @@
     outline: none;
     transition: border 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 3%;
-    color: #212121;
+    color: hwb(0 32% 68%);
     font-weight: 500;
-    font-size: 14px;
+    
+    
 
-    @apply lg:text-[15px] text-[12px];
+    @apply lg:text-[12px] text-[10px] leading-4  font-Poppins;
   }
   
   .login-input:focus {

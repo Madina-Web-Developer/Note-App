@@ -7,6 +7,8 @@ import Rezister from './Components/Ligin Folder/Rezister';
 import app from './firebase.config';
 import LoginForm from './Components/Ligin Folder/LoginForm';
 import Navbar from './Components/Navbar/Navbar';
+import Layoutone from './Components/Layouts/Layoutone';
+import Home from './Components/Pages/Home';
 
 
 
@@ -17,10 +19,13 @@ function App() {
     createRoutesFromElements(
       <Route>
         
-        <Route path='/' element={<Rezister/>}/> 
+        <Route path='/register' element={<Rezister/>}/> 
         <Route path='/login' element={<LoginForm/>}/>
-        <Route path='/navbar' element={<Navbar/>}/>
 
+        <Route path='/' element={<Layoutone/>}  >
+          <Route index element={<Home/>}/>
+        </Route>
+        
       </Route>
     )
   )
