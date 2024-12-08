@@ -13,13 +13,20 @@ export default {
 
     extend: {
 
+      
+      colors:{
+
+        'BrandColor': '#FFADAD',
+      },
+
       fontFamily:{
         Bangi:['Bungee Spice', 'sans-serif' ],
         Albi: ["Abril Fatface", 'serif'],
-        Poppins:["Poppins", 'sans-serif']
+        Poppins:["Poppins", 'sans-serif'],
+        SaboAlfa:["Alfa Slab One", 'serif'],
       },
 
-      clipPath: {
+      clipPath:{
         'circle': 'circle(29% at 0 0)',
       },
     },

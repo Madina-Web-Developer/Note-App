@@ -1,0 +1,21 @@
+
+
+
+.Sidenav{
+
+    @apply  w-[200px] h-screen bg-[#f6f0fc] ;
+
+    box-shadow: rgba(37, 37, 37, 0.26) 2px 4px 6px, rgba(37, 37, 37, 0.23) 2px 4px 6px;
+    
+
+}
+
+.all_notes{
+
+    @apply font-serif lg:text-[22px] text-center text-gray-400
+}
+
+.Side_text{
+
+    @apply p-9
+}

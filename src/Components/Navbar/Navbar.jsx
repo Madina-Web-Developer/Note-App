@@ -2,14 +2,31 @@ import React from 'react'
 import './Navbar.css'
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { BsSearch } from "react-icons/bs";
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../Slice/UserSlice';
 
 const Navbar = () => {
 
+    // --------- Redux Data ---------------
+
  const userSlice=useSelector((state)=> state.currentUser.value)
 
+
+// ---------------- Varible part ----------
+
+const navigate = useNavigate()
+
+const dispatch = useDispatch
+
+const handelOut =()=>{
+
+    navigate('/login')
+    localStorage.removeItem('currentUser')
+    dispatch(userData(null))
+
+
+}
 
 
 console.log(userSlice)
@@ -28,9 +45,9 @@ console.log(userSlice)
                 <div className="logo">
 
                     <div className="logo_img">
-                    <img src="public/note.png" alt="note" />
+                    
                     </div>
-                    <h1>Daily Note</h1>
+                    <h1>No<span className='note'>t</span>e</h1>
                 </div>
                 <div className="search">
                       <BsSearch className='mina_search' />
@@ -48,7 +65,7 @@ console.log(userSlice)
                     <div className="logout">
                     </div>
                     <div className="logout">
-                    <Link to={'/login'} ><RiLogoutCircleRLine className='out active:scale-[1.1]' /></Link>
+                    <RiLogoutCircleRLine onClick={handelOut} className='out active:scale-[1.1]' />
                     <h3>Log out</h3>
 
                     </div>
