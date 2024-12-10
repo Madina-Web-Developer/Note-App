@@ -9,12 +9,17 @@
 
 .nav{
 
-    @apply lg:p-[2px]  border-b-2 border-b-slate-200 p-1;
+    @apply lg:p-[2px]  border-b-2 border-b-slate-200 dark:border-b-slate-500 p-1 dark:shadow-[0px_0px_5px_1px_#e0e1e1] bg-[#e8ffff] dark:bg-black
+    
+    
+    
+    /* bg-gradient-to-r from-gradientStart via-gradientMid to-gradientEnd; */;
 
-    background: linear-gradient(to right, rgb(255,230,250), #e8ffff,rgb(255,230,250), #e8ffff) ;
     box-shadow: rgba(37, 37, 37, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
 }
+
+
 
 
 .logo{
@@ -36,7 +41,7 @@
 
 .name h2{
 
-    @apply text-[6px] lg:text-[15px]  font-bold font-serif text-gray-700 lg:mr-5 mt-1
+    @apply text-[6px] lg:text-[15px]  font-bold font-serif text-gray-700 lg:mr-5 mt-1 dark:text-gray-200
 }
 
 .logo_img img{
@@ -76,9 +81,9 @@
 
     @apply   lg:w-[450px] w-[100px] lg:py-2  lg:px-4 border-solid lg:border-[1.8px]  border-[1px] border-[#FEA597] lg:pl-16 pl-4  rounded-sm   lg:rounded-md  outline-none
 
-    lg:text-[18px] text-[8px] font-semibold font-Poppins text-gray-600 p-[2px] m-0 hover:shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]
+    lg:text-[18px] text-[8px] font-semibold font-Poppins text-gray-600 dark:text-white p-[2px] m-0 hover:shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]
     
-    hover:border-[hsl(0,0%,44%)] bg-slate-200;
+    hover:border-[hsl(0,0%,44%)] bg-slate-100 dark:bg-slate-600;
     
     
     box-shadow: #4e4e4e29 0px 3px 6px, rgba(82, 82, 82, 0.23) 0px 3px 6px;
@@ -98,5 +103,5 @@
 
 .note{
 
-    @apply text-black lg:text-[42px] text-[16px]
+    @apply text-black dark:text-white lg:text-[42px] text-[16px]
 }

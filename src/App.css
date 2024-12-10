@@ -1,4 +1,10 @@
 body{
 
     background-color:#ffffff;
+    
+}
+
+body{
+
+    @apply dark:bg-slate-700
 }

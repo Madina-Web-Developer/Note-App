@@ -4,6 +4,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
+
+    darkMode:'class',
+
+
   theme: {
 
 
@@ -13,8 +18,14 @@ export default {
 
     extend: {
 
-      
-      colors:{
+      colors: {
+        
+        gradientStart: "rgb(255,230,250)", // First color
+        gradientMid: "#e8ffff", // Second color
+        gradientEnd: "rgb(255,230,250)", // Third color
+      },
+
+      color:{
 
         'BrandColor': '#FFADAD',
       },

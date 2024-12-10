@@ -9,6 +9,9 @@ import LoginForm from './Components/Ligin Folder/LoginForm';
 import Navbar from './Components/Navbar/Navbar';
 import Layoutone from './Components/Layouts/Layoutone';
 import Home from './Components/Pages/Home';
+import PinNotepage from './Components/Pages/PinNotepage';
+import BinNotepage from './Components/Pages/BinNotepage';
+import Allnotespage from './Components/Pages/Allnotespage';
 
 
 
@@ -24,6 +27,9 @@ function App() {
 
         <Route path='/' element={<Layoutone/>}  >
           <Route index element={<Home/>}/>
+          <Route path='/pin' element={<PinNotepage/>}/>
+          <Route path='/bin' element={<BinNotepage/>}/>
+          <Route path='/allnote' element={<Allnotespage/>}/>
         </Route>
         
       </Route>

@@ -24,8 +24,12 @@ const Layoutone = () => {
     <>
     
     <Navbar/>
+    <div className='mina_flex  flex w-full'>
+
     <SideNavbar/>
     <Outlet/>
+
+    </div>
     
     </>
   )
