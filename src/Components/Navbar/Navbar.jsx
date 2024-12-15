@@ -17,7 +17,7 @@ const Navbar = () => {
 
 const navigate = useNavigate()
 
-const dispatch = useDispatch
+const dispatch = useDispatch()
 
 const handelOut =()=>{
 

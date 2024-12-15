@@ -20,9 +20,9 @@ export default {
 
       colors: {
         
-        gradientStart: "rgb(255,230,250)", // First color
-        gradientMid: "#e8ffff", // Second color
-        gradientEnd: "rgb(255,230,250)", // Third color
+        gradientStart: "#b0ffff", // First color
+        gradientMid: "#ffd3cc", // Second color
+        gradientEnd: "#b0ffff", // Third color
       },
 
       color:{

@@ -9,11 +9,10 @@
 
 .nav{
 
-    @apply lg:p-[2px]  border-b-2 border-b-slate-200 dark:border-b-slate-500 p-1 dark:shadow-[0px_0px_5px_1px_#e0e1e1] bg-[#e8ffff] dark:bg-black
+    @apply lg:p-[2px]  border-b-2 border-b-slate-200 dark:border-b-slate-500 p-1  dark:shadow-[0px_0px_5px_1px_#e0e1e1]  dark:bg-black lg:px-4 px-2 w-full
     
     
-    
-    /* bg-gradient-to-r from-gradientStart via-gradientMid to-gradientEnd; */;
+       bg-gradient-to-r from-gradientStart via-gradientMid to-gradientEnd; 
 
     box-shadow: rgba(37, 37, 37, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
