@@ -49,11 +49,7 @@ console.log(userSlice)
                     </div>
                     <h1>No<span className='note'>t</span>e</h1>
                 </div>
-                <div className="search">
-                      <BsSearch className='mina_search' />
-                    <input type="search" placeholder='Search here' className='input_search placeholder:text-gray-300 placeholder:italic'/>
-                    
-                </div>
+              
                 </div>
 
 

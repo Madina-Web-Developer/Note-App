@@ -21,7 +21,7 @@ export default {
       colors: {
         
         gradientStart: "#b0ffff", // First color
-        gradientMid: "#ffd3cc", // Second color
+        gradientMid: "#efdbd6", // Second color
         gradientEnd: "#b0ffff", // Third color
       },
 

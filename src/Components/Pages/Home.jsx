@@ -1,17 +1,16 @@
 import React from 'react'
 import Addcard from '../AddCard/Addcard'
 import SingleNote from '../SingleNote/SingleNote'
+import Allnotespage from './Allnotespage'
 
 const Home = () => {
   return (
-    <div className='dark:bg-[#000000] w-full h-screen mt-2 ml-2'>
+    <div className='w-full h-screen dark:bg-slate-950'>
        <div>
-        <Addcard/>
 
-        
-        <SingleNote/>
+        <Allnotespage/>
 
-
+       
        </div>
     </div>
   )

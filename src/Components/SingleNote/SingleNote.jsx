@@ -60,12 +60,11 @@ const SingleNote = () => {
                 allNotes.map((item)=>(
 
 
-    <div  className="mina_card mt-20 ml-20 w-[250px] h-[200px] flex flex-col justify-center items-center p-[5px] border-[1.8px] bg-[rgb(251,253,255)] dark:bg-slate-800 rounded-md  dark:border-[hsl(8,58%,62%)] border-[hsl(8,100%,81%)]
-   ">
+          <div style={{ backgroundColor: item.Bgcolor}} className={`mina_card mt-24  w-[200px] h-[200px] flex flex-col justify-center items-center p-[5px] border-[1.8px] dark:bg-slate-800 rounded-md  dark:border-[hsl(8,58%,62%)] border-[hsl(8,100%,81%)]`}>
 
-        <h2 className='text-[20px] text-black font-medium dark:text-gray-300'>{item.Title}</h2>
+        <h2 style={{color: item.TextColor}} className='text-[20px] text-black font-medium dark:text-gray-300'>{item.Title}</h2>
 
-       <p className='text-center text-black dark:text-gray-300'>{item.Note}</p>
+       <p  className='text-center text-black dark:text-gray-300'>{item.Note}</p>
 
     </div>
 

@@ -48,7 +48,7 @@ const handelMode = () => {
         
              <NavLink
             to="/allnote"
-            className={({ isActive }) => [isActive ? "bg-[rgb(255,158,143)] p-5 w-full flex gap-2  text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
+            className={({ isActive }) => [isActive ? "bg-[#ff9e8f] p-5 w-full flex gap-2  text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
                 
                 
                 : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500 dark:text-white"
