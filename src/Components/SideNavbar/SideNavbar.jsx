@@ -5,6 +5,7 @@ import { SlPin } from "react-icons/sl";
 import { MdNoteAlt } from "react-icons/md";
 import { ImBin } from "react-icons/im";
 import { useEffect, useState } from "react";
+import { FaHome } from "react-icons/fa";
 
 const SideNavbar = () => {
 
@@ -45,28 +46,49 @@ const handelMode = () => {
 
         <ul>
             <li>
-        
-             <NavLink
-            to="/allnote"
-            className={({ isActive }) => [isActive ? "bg-[#ff9e8f] p-5 w-full flex gap-2  text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
+
+
+            <NavLink
+            to="/"
+            className={({ isActive }) => [isActive ? "bg-[#ffa89b] dark:bg-[#cc7e72] p-5 w-full flex gap-2  text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
                 
                 
-                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500 dark:text-white"
+                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500 dark:text-slate-300"
                 ,
             
             ].join(" ")
   }
               >
-            <MdNoteAlt className='text-[27px] dark:text-blue-500 text-gray-900'/> All Notes
+            <FaHome className='text-[26px] dark:text-gray-50 text-yellow-400'/> Home
+             </NavLink>
+
+
+
+
+
+
+        
+             <NavLink
+            to="/allnote"
+            className={({ isActive }) => [isActive ? "bg-[#ffa89b] dark:bg-[#cc7e72] p-5 w-full flex gap-2  text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
+                
+                
+                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500 dark:text-slate-300"
+                ,
+            
+            ].join(" ")
+  }
+              >
+            <MdNoteAlt className='text-[27px] dark:text-yellow-500 text-gray-900'/> All Notes
              </NavLink>
 
 
              <NavLink
             to="/pin"
-            className={({ isActive }) => [isActive ? "bg-[rgb(255,158,143)] p-5 w-full flex gap-2 text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
+            className={({ isActive }) => [isActive ? "bg-[#ffa89b] dark:bg-[#cc7e72] p-5 w-full flex gap-2 text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
                 
                 
-                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500  dark:text-white"
+                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500  dark:text-slate-300"
                 ,
             
             ].join(" ")
@@ -79,10 +101,10 @@ const handelMode = () => {
 
              <NavLink
             to="/bin"
-            className={({ isActive }) => [isActive ? "bg-[rgb(255,158,143)] p-5 w-full  flex gap-2 text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
+            className={({ isActive }) => [isActive ? "bg-[#ffa89b] dark:bg-[#cc7e72] p-5 w-full  flex gap-2 text-[18px] font-serif font-semibold text-black  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] dark:text-black"
                 
                 
-                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500  dark:text-white"
+                : " p-5 w-full flex gap-2 text-[17px] font-serif font-semibold text-gray-500  dark:text-slate-300"
                 ,
             
             ].join(" ")

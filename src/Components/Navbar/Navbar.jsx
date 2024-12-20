@@ -5,6 +5,7 @@ import { BsSearch } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../Slice/UserSlice';
+import { FaPencil } from "react-icons/fa6";
 
 const Navbar = () => {
 
@@ -44,16 +45,23 @@ console.log(userSlice)
                 <div className="logo_search">
                 <div className="logo">
 
-                    <div className="logo_img">
+                    <h1>No<span className='note'>t</span>e</h1>
+
+                    <div className="logo_img ">
+
+                    <FaPencil />
                     
                     </div>
-                    <h1>No<span className='note'>t</span>e</h1>
+                    
                 </div>
-              
+            
                 </div>
+               
 
 
                 </div>
+
+             
 
                 <div className="user_info">
                     <div className="user_profile_pic overflow-hidden"><img src={userSlice?.photoURL} alt="photo" /></div>
@@ -67,8 +75,10 @@ console.log(userSlice)
                     </div>
                 </div>
             </div>
+            {/* <h2>Make your day easy by doing a note!</h2> */}
 
         </div>
+       
 
     </div>
     </>

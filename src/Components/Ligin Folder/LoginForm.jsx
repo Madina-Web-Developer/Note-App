@@ -199,8 +199,21 @@ const LoginForm = () => {
 
         <div className="sn">
         <h4>Don't have an Account ?</h4>
-            <button type="button" className="signup-button">
-             <Link to={'/register'}> Sign Up </Link>
+            <button type="button" className="">
+             <Link to={'/register'}> 
+             
+             <button
+        class="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-green-600/60  px-2 py-1 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-green-400/60"
+      >
+        <span class="text-md font-bold font-Poppins lg:text-[14px] text-[10px]">Sign Up</span>
+        <div
+          class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+        >
+          <div class="relative h-full w-10 bg-white/30"></div>
+        </div>
+                </button>
+             
+              </Link>
             </button>
         </div>
        

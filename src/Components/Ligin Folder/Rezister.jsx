@@ -302,8 +302,28 @@ const auth = getAuth();
 
        
             <div className="login_b">
+
+            
+
            
-           <Link  className='login_back' to={'/login'}>Login</Link>
+           <Link  className='login_back' to={'/login'}>
+           
+           
+           
+                <button
+        class="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-green-600/60  px-3 lg:px-4 py-1 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-green-400/60"
+      >
+        <span class="text-base font-bold font-Poppins lg:text-[17px] text-[14px]">Login</span>
+        <div
+          class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+        >
+          <div class="relative h-full w-10 bg-white/30"></div>
+        </div>
+                </button>
+           
+           
+           
+           </Link>
            
             </div>
            

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, update } from "firebase/database";
+import { useSelector } from 'react-redux';
+import { HiDotsVertical } from "react-icons/hi";
 
 const SingleNote = () => {
 
@@ -8,7 +10,7 @@ const SingleNote = () => {
 
     // ============ redux Data 
 
-
+    const userSlice=useSelector((state)=> state.currentUser.value)
 
 
 
@@ -17,18 +19,27 @@ const SingleNote = () => {
 
     const [allNotes, setAllnotes] = useState([])
 
+    const [show, setShow] = useState(false)
+
+    const[uniqCard, SetuniqCard] = useState('')
+
 
 
 
     // ================ Firebase Variable 
 
-    const data = getDatabase()
-
-
+    const db = getDatabase()
 
     // ================= All Function 
 
+    const handelpin=(pinData)=>{
 
+    update(ref(db, "AllNote/"+ pinData.key),{
+
+    PinNote:true
+  });
+ 
+}
 
 
 
@@ -36,20 +47,20 @@ const SingleNote = () => {
 
     useEffect(()=>{
 
-       onValue(ref(data, "AllNote/"), (snapshot) => {
+       onValue(ref(db, "AllNote/"), (snapshot) => {
         let arr = []
         snapshot.forEach((item) => {
-            arr.push(item.val())
+           if(item.val(). UserId== userSlice.uid && item.val().PinNote == false){
+            arr.push({...item.val(), key:item.key})
+            
+           }
         })
 
         setAllnotes(arr)
-    })
-
+      })
+      
     },[]);
-
-
-
-
+    
 
   return (
     <div>
@@ -60,11 +71,39 @@ const SingleNote = () => {
                 allNotes.map((item)=>(
 
 
-          <div style={{ backgroundColor: item.Bgcolor}} className={`mina_card mt-24  w-[200px] h-[200px] flex flex-col justify-center items-center p-[5px] border-[1.8px] dark:bg-slate-800 rounded-md  dark:border-[hsl(8,58%,62%)] border-[hsl(8,100%,81%)]`}>
+          <div key={item.key} style={{ backgroundColor: item.Bgcolor}} onClick={()=>setShow(!show)} className={`mina_card mt-[18px]  w-[220px] h-[200px] flex flex-col lg:px-[15px] py-[2px] border-[1.8px] dark:bg-slate-500 rounded-md   dark:border-[#287178] border-[#9af7ff] relative`}>
 
-        <h2 style={{color: item.TextColor}} className='text-[20px] text-black font-medium dark:text-gray-300'>{item.Title}</h2>
+            <div>
+              <HiDotsVertical onClick={()=>{setShow(!show), SetuniqCard(item)}} className='absolute top-[8px] lg:text-[20px] text-[14px]  text-yellow-600 right-[2px]  hover:text-gray-400 transition-all duration-[.4s]'/>
 
-       <p  className='text-center text-black dark:text-gray-300'>{item.Note}</p>
+              {
+                show&& uniqCard.key == item.key&&
+
+            <div className="list flex flex-col absolute bg-gray-50 top-[15%] right-[2%] w-[60px] ">
+
+
+              
+              <button onClick={()=>handelpin(item)} className='lg:text-[11px] text-[10px]  font-Poppins font-medium text-gray-800   hover:bg-gray-800 hover:text-yellow-300 pt-1 '>Pin</button>
+
+            <hr />
+
+              <button className='lg:text-[11px] text-[10px] font-Poppins font-medium  text-gray-800 hover:bg-gray-800  hover:text-yellow-300 
+              
+              p-[1px]'>Edit</button>
+
+              <hr />
+
+              <button className='lg:text-[11px] text-[10px] font-Poppins font-medium text-gray-800 hover:bg-gray-800  hover:text-yellow-300 pb-1'>Remove</button>
+            </div>
+
+              }
+
+
+            </div>
+
+        <h2 style={{color: item.TextColor}} className='text-[14px] text-center mt-[16px]  border-b-[1px] pb-[1px] font-Poppins  border-b-gray-400 font-bold'>{item.Title}</h2>
+
+       <p style={{color: item.TextColor}} className='dark:text-gray-300 font-Poppins  font-medium lg:text-[12px] text-[10px] mt-4'>{item.Note}</p>
 
     </div>
 

@@ -3,7 +3,7 @@
 
 .Sidenav{
 
-    @apply  w-[200px] py-1 h-screen bg-[#c2fbfb] dark:shadow-[0px_1px_3px_1px_#e0e1e1] dark:border-r-2 dark:border-r-gray-400 ;
+    @apply  w-[210px] py-1 h-screen bg-[#9af7ff] dark:shadow-[0px_1px_3px_1px_#e0e1e1] dark:bg-[#11425e] dark:border-none;
 
     box-shadow: rgba(37, 37, 37, 0.26) 2px 4px 6px, rgba(37, 37, 37, 0.23) 2px 4px 6px;
     

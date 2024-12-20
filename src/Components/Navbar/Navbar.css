@@ -9,10 +9,10 @@
 
 .nav{
 
-    @apply lg:p-[8px]  dark:border-b-[2px] dark:border-b-slate-400 p-1 border-b-[2px] border-b-slate-400 dark:bg-black lg:px-4 px-2 w-full
+    @apply lg:py-[4px]  p-1 border-b-[2px] border-b-slate-400 dark:border-b-[2px] dark:border-b-slate-500 dark:bg-[#104b6d] lg:px-[20px] px-2 py-2 w-full
     
     
-       bg-[#c2fbfb]
+       bg-[#9af7ff]
        dark:shadow-[0px_4px_12px_0px_#ffffff];
 
     box-shadow: rgba(37, 37, 37, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -22,12 +22,12 @@
 
 .logo{
 
-    @apply flex lg:gap-1 gap-[3px] mt-1 justify-center items-center
+    @apply flex  mt-1 justify-center items-center
 }
 
 .logo h1{
 
-    @apply font-SaboAlfa  font-medium lg:font-semibold md:font-bold  text-[15px]   lg:text-[40px] text-[hsl(8,100%,71%)] tracking-wider
+    @apply font-SaboAlfa  font-medium lg:font-semibold md:font-bold  text-[15px]   lg:text-[43px] text-[hsl(8,100%,71%)] tracking-wider 
 
 
 }
@@ -39,12 +39,13 @@
 
 .name h2{
 
-    @apply text-[6px] lg:text-[15px]  font-bold font-serif text-gray-700 lg:mr-5 mt-1 dark:text-gray-200
+    @apply text-[6px] lg:text-[15px]  font-bold font-serif text-gray-700 lg:mr-5
+     mt-1 dark:text-gray-200
 }
 
-.logo_img img{
+.logo_img {
 
-    @apply lg:w-[50px] w-[16px] 
+    @apply lg:text-[20px] md:text-[14px] text-[8px] lg:mt-2  dark:text-white text-gray-700
 }
 
 

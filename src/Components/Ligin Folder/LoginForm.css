@@ -4,14 +4,14 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to left, rgb(255,230,250), #e8ffff,rgb(255,230,250), #e8ffff);
+    background: linear-gradient(to left, rgb(253, 234, 249), #e8ffff,rgb(248, 231, 245), #e8ffff);
    
    
   }
 
   .top img{
 
-    @apply w-[130px] h-[180px] absolute hidden  lg:block lg:top-[56%]    lg:right-[25%]  xl:right-[35.5%]   xl:top-[52%]    z-0
+    @apply w-[130px] h-[180px] absolute hidden  lg:block lg:top-[50%]    lg:right-[25%]  xl:right-[35.5%]   xl:top-[52%]    z-0
   }
 
   
@@ -25,7 +25,7 @@
 
     border-radius: 5px;
     margin: 2% auto;
-    background-image: linear-gradient(-225deg, #E8FFFF 50%, #FFE6FA 50%);
+    background-image: linear-gradient(-225deg, #dbffff 50%, #ffe7fb 50%);
     box-shadow: 0px 2px 15px 1px hwb(0 61% 39%);
     border: solid 2px hwb(0 76% 24%);
     position: relative;
@@ -39,7 +39,7 @@
 
   .login-box_l{
 
-    @apply p-[5%] lg:py-[1.7%] lg:px-[2%]
+    @apply p-[5%] lg:py-[2.5%] lg:px-[2%]
   }
 
   
@@ -123,7 +123,7 @@
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 4.5px;
+    padding: 2px;
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -137,6 +137,7 @@
     color: rgb(253, 253, 253);
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
    }
    
 .login-button span {

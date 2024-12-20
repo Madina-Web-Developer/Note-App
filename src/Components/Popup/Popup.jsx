@@ -4,8 +4,15 @@ import { IoColorPaletteOutline } from "react-icons/io5";
 import { BsEyedropper } from "react-icons/bs";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { MdOutlineFormatColorText } from "react-icons/md";
+import { useSelector } from 'react-redux';
 
 const Popup = ({showvalue, PopCross}) => {
+
+  // ------------ Redux Data --------------------
+  const userSlice=useSelector((state)=> state.currentUser.value)
+
+
+
 
     // ========== Custom Variable ============//
 
@@ -17,7 +24,7 @@ const Popup = ({showvalue, PopCross}) => {
 
     const [colors, setColors]   = useState('#fff')
 
-    const [textcolor, setTextcolor] = useState('ffff')
+    const [textcolor, setTextcolor] = useState('#fff')
 
 
     // ============= Firebase Variable========================
@@ -45,6 +52,8 @@ const Popup = ({showvalue, PopCross}) => {
           Note: PopData.Popnote,
           Bgcolor: colors,
           TextColor: textcolor,
+          PinNote: false,
+          UserId: userSlice.uid,
          
         })
 
@@ -57,24 +66,27 @@ const Popup = ({showvalue, PopCross}) => {
     }
 
 
-    // useEffect(() => {    
-    //   setInterval(() => {        
-    //           if (localStorage.getItem("mode") == "dark") {
-    //             setColors("#000")
-    //           }
-    //           else{
-    //             setColors("#FFF")
-    //           }
-    //       }, 1000);
-    //   }, [])
-  
+    // ------------- Color Mode ------------------
 
-    console.log(PopData)
+
+     useEffect(() => {
+        if (localStorage.getItem("mode") == "dark") {
+          setColors("#000")
+          setTextcolor('#fff')
+        }
+        else{
+          setColors("#FFF")
+          setTextcolor('#000')
+        }
+     }, [localStorage.getItem("mode")])
+
+
+    console.log(userSlice)
 
   return (
     <div>
 
-      <div className={ `mina popup ${showvalue? 'w-full' : 'w-0'} transition-all justify-center items-center flex duration-[.7s] absolute  h-screen bg-[#00000050] dark:bg-[rgba(246,231,154,0.33)] top-0 right-0` }>
+      <div className={ `mina popup ${showvalue? 'w-full' : 'w-0'} z-[999] transition-all justify-center items-center flex duration-[.7s] absolute  h-screen bg-[#00000050] dark:bg-[rgba(246,231,154,0.33)] top-0 right-0` }>
      
        <div className="all_pop_text">
 
@@ -89,17 +101,15 @@ const Popup = ({showvalue, PopCross}) => {
 
       <div style={{backgroundColor:colors}} className={`pop_input  ${showvalue? 'block': 'hidden'} w-[600px]  p-[20px] dark:bg-black rounded-md`}>
 
-        <h1 style={{color:textcolor}} className='title text-[20px]  text-gray-800 mt-4 font-bold font-Poppins  dark:text-[#ffb4a8]'>Note Title</h1>
-
-        {/* ============ Title Error Start======================= */}
+      <h2 style={{color:textcolor}} className=' mt-4 text-[21px] font-Poppins text-gray-800 font-bold dark:text-[#ffb4a8]'>Note Title</h2>
 
         <p value={PopData.TitleError} className='text-[11px] font-medium text-red-500'>{PopData.TitleError}</p>
         {/* ============= Title Error End ============================== */}
 
 
-        <input value={PopData.Poptitle} style={{color:textcolor}} onChange={(e)=>{setPopData((preve)=>({...preve, Poptitle:e.target.value})) , setPopData((preve)=>({...preve,TitleError:''}))}}  type="text" placeholder='title.........' className='w-full  placeholder:text-gray- dark:placeholder:text-gray-400 h-[40px] mt-2 rounded-sm dark:bg-gray-700 shadow-[0px_3px_4px_0px_rgba(0,_0,_0,_0.3)] bg-[#eeeeee] dark:shadow-[0px_1px_2px_0px_#ffffff] outline-none p-2 dark:text-gray-200 text-gray-700 text-[14px] font-bold ' />
+        <input value={PopData.Poptitle}  onChange={(e)=>{setPopData((preve)=>({...preve, Poptitle:e.target.value})) , setPopData((preve)=>({...preve,TitleError:''}))}}  type="text" placeholder='title.........' className='w-full  placeholder:text-gray- dark:placeholder:text-gray-400 h-[40px] mt-2 rounded-sm dark:bg-gray-700 shadow-[0px_3px_4px_0px_rgba(0,_0,_0,_0.3)] bg-[#eeeeee] dark:shadow-[0px_1px_2px_0px_#ffffff] outline-none p-2 dark:text-gray-200 text-gray-700 text-[15px] font-bold ' />
 
-        <h2 style={{color:textcolor}} className=' mt-5 text-[18px] text-gray-800 font-bold dark:text-[#ffb4a8]'>Description</h2>
+        <h2 style={{color:textcolor}} className=' mt-5 text-[18px] text-gray-800 font-Poppins font-semibold dark:text-[#ffb4a8]'>Description</h2>
 
            {/* ============ Note Error Start======================= */}
 
@@ -107,7 +117,7 @@ const Popup = ({showvalue, PopCross}) => {
         {/* ============= Note Error End ============================== */}
 
         <textarea value={PopData.Popnote}  onChange={(e)=>{setPopData((preve)=>({...preve, Popnote:e.target.value})) , setPopData((preve)=>({...preve,NoteError:''}))}}    name="text" placeholder='write your note...............' className='w-full h-[250px] placeholder:text-gray-300 dark:placeholder:text-gray-400 mt-2 rounded-sm dark:bg-gray-700
-         bg-[#eeeeee] outline-none p-2 shadow-[0px_3px_4px_0px_rgba(0,_0,_0,_0.3)] dark:shadow-[0px_1px_2px_0px_#ffffff] dark:text-gray-200 text-gray-700 text-[15px] font-semibold font-Poppins'></textarea>
+         bg-[#eeeeee] outline-none p-2 shadow-[0px_3px_4px_0px_rgba(0,_0,_0,_0.3)] dark:shadow-[0px_1px_2px_0px_#ffffff] dark:text-gray-200 text-gray-700 text-[14px] font-semibold font-Poppins'></textarea>
 
          {/* ------------------- Text Color ----------------------------------- */}
 
@@ -120,7 +130,7 @@ const Popup = ({showvalue, PopCross}) => {
  
 
 
-                <div className={`${textshow? 'left-8':'left-[-35%]'} absolute flex gap-1 top-[19%] transition-all duration-[.8s]`}>
+                <div className={'flex gap-1'}>
 
               <button onClick={()=>setTextcolor('#fff')} className='color rounded-full  border-[1px] border-black   w-[18px] h-[18px] bg-[#fff] '></button>
               <button onClick={()=>setTextcolor('#000')} className='color rounded-full  border-[1px] border-black   w-[18px] h-[18px] bg-[#000] '></button>
