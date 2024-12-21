@@ -10,7 +10,7 @@
 
   .w img{
 
-    @apply lg:w-[450px] lg:h-[500px] hidden absolute   lg:block  lg:top-[17%] lg:right-[3%]   xl:top-[26%] xl:right-[23%]    z-0 opacity-60
+    @apply lg:w-[450px] lg:h-[500px] hidden absolute   lg:block  lg:top-[29%] lg:right-[3%]   xl:top-[26%] xl:right-[23%]    z-0 opacity-60
   }
 
   
@@ -45,7 +45,7 @@
 
   .login-box{
 
-    @apply p-[5.5%] lg:py-[2%] lg:px-[2%]
+    @apply p-[6%] md:p-[4%] lg:py-[2%] lg:px-[3%] xl:px-[2%]
   }
 
   

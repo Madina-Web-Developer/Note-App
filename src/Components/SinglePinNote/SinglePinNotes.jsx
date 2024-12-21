@@ -1,4 +1,4 @@
-import { getDatabase, onValue, ref, update } from 'firebase/database';
+import { getDatabase, onValue, push, ref, remove, set, update } from 'firebase/database';
 import React, { useEffect, useState } from 'react'
 import { HiDotsVertical } from "react-icons/hi";
 import { useSelector } from 'react-redux';
@@ -46,6 +46,31 @@ const handelUnpin=(UnpinData)=>{
   });
  
 }
+
+
+
+
+
+const handelRemove =(RemoveNote)=>{
+
+  set(push(ref(db, 'BinNote/')), {
+
+    Title: RemoveNote.Title,
+    Note: RemoveNote.Note,
+    Bgcolor: RemoveNote.Bgcolor,
+    TextColor:RemoveNote. TextColor,
+    PinNote:RemoveNote.PinNote,
+    UserId: userSlice.uid,
+   
+  })
+
+  remove(ref(db, "AllNote/" + RemoveNote.key))
+
+}
+
+
+// -------------- Remove Data -----------------//
+
 
 
   // ================ Realtime Firebase Data
@@ -97,7 +122,7 @@ const handelUnpin=(UnpinData)=>{
    
                  <hr />
    
-                 <button className='lg:text-[11px] text-[10px] font-Poppins font-medium text-gray-800 hover:bg-gray-800  hover:text-yellow-300 pb-1'>Remove</button>
+                 <button onClick={()=>handelRemove(item)} className='lg:text-[11px] text-[10px] font-Poppins font-medium text-gray-800 hover:bg-gray-800  hover:text-yellow-300 pb-1'>Remove</button>
                </div>
    
                  }

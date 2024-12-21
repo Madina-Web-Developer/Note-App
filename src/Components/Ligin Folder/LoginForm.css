@@ -39,7 +39,7 @@
 
   .login-box_l{
 
-    @apply p-[5%] lg:py-[2.5%] lg:px-[2%]
+    @apply p-[5.5%] md:p-[4%] lg:py-[2.5%] lg:px-[2%]
   }
 
   

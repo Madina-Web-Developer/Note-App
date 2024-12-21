@@ -9,7 +9,7 @@
 
 .nav{
 
-    @apply lg:py-[4px]  p-1 border-b-[2px] border-b-slate-400 dark:border-b-[2px] dark:border-b-slate-500 dark:bg-[#104b6d] lg:px-[20px] px-2 py-2 w-full
+    @apply lg:py-[5px]  p-1 border-b-[2px] border-b-slate-400 dark:border-b-[2px] dark:border-b-slate-500 dark:bg-[#104b6d] lg:px-[20px] px-2 py-2 w-full
     
     
        bg-[#9af7ff]
