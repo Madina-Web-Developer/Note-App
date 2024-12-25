@@ -37,12 +37,8 @@ export default {
         SaboAlfa:["Alfa Slab One", 'serif'],
       },
 
-      clipPath:{
-        'circle': 'circle(29% at 0 0)',
-      },
+      
     },
   },
-    plugins: [
-      tailwindClipPath,
-    ],
+    plugins: [],
 }
