@@ -8,11 +8,7 @@
    
   }
 
-  .w img{
-
-    @apply lg:w-[450px] lg:h-[500px] hidden absolute   lg:block  lg:top-[29%] lg:right-[3%]   xl:top-[26%] xl:right-[23%]    z-0 opacity-60
-  }
-
+ 
   
   /* Login box */
   .login-box {

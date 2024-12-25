@@ -128,7 +128,7 @@ const LoginForm = () => {
 
     <>
     
-    <div className="top"><img className='top' src="public/t.png" alt="h" /></div>
+   
     
     <div className="login-container">
       <div className="login-box_l">

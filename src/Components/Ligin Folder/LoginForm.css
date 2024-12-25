@@ -9,11 +9,6 @@
    
   }
 
-  .top img{
-
-    @apply w-[130px] h-[180px] absolute hidden  lg:block lg:top-[50%]    lg:right-[25%]  xl:right-[35.5%]   xl:top-[52%]    z-0
-  }
-
   
 
   

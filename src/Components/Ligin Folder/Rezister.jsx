@@ -162,7 +162,7 @@ const auth = getAuth();
   return (
     <>
     
-    <div className="w"><img className='w' src="public/w.png" alt="h" /></div>
+   
     
     <div className="login-container">
 
