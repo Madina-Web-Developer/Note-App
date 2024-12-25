@@ -42,7 +42,7 @@ export default {
       },
     },
   },
-  plugins: [
-    require('tailwind-clip-path'), // Install with npm or yarn
-  ],
+    plugins: [
+      tailwindClipPath,
+    ],
 }
